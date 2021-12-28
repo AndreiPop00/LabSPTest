@@ -1,24 +1,26 @@
-import java.util.List;
-import java.util.ArrayList;
+
 public class Book {
-	String name;
-	List<String> paragraph = new ArrayList<String>();
-	List<String> image = new ArrayList<String>();
-	List<String> table = new ArrayList<String>();
-	public Book (String name) {
-		this.name = name;
+	String title;
+	Author auth_Name;
+	public Chapter chapter_Name;
+	public Book (String title) {
+		this.title = title;
 	}
-	public void createNewParagraph (String string) {
-		paragraph.add(string);
+	public void addAuthor(Author name) {
+		this.auth_Name = name;
 	}
-	public void createNewImage (String string) {
-		image.add(string);
+	public int createChapter(String chap) {
+		
+		int nr = Integer.valueOf(chap.replaceAll("[^0-9?!\\.]",""));
+		return nr;
 	}
-	public void createNewTable (String string) {
-		table.add(string);
-	}
-	public void print()
+	
+	public Chapter getChapter(int chapter)
 	{
-		System.out.print(name + " " + paragraph + " " + image + " " + table);
+		String nr = String.valueOf(chapter) + ".x";
+		Chapter ceva = new Chapter();
+		ceva.setChapter(nr);
+		this.chapter_Name = ceva;
+		return chapter_Name;
 	}
-}
+}	
