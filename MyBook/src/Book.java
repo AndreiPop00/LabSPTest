@@ -21,7 +21,9 @@ public class Book extends Section {
 			 author.print();
 		 System.out.println();
 		 
-		 this.get(0).print();
+		 for (Element element : elementList) {
+	         element.print();
+	     }
 	}
 	
 	public void addAuthor(Author author) {
