@@ -10,3 +10,12 @@ no content
 # Feedback lab5
 
 still no content
+
+# Feedback lab6:
+https://github.com/AndreiPop00/LabSPTest/tree/c5a727b6636640bd466dbc20e78081e81e6c7589
+
+- section is not present in the data structure, as beeing the central point.
+- Book statistics should handle only the images, paragraphs and tables, other content are not needed
+- Table of Content should be a list of section's titles, and the visitor that generates should use the implementation for visit(Section) and others are irelevant.
+
+# Propose grade: 5
