@@ -1,6 +1,6 @@
 
 
-public class Paragraph extends Element {
+public class Paragraph extends Element implements Visitee {
 		private String text;
 		
 		private AlignStrategy textAlignment;
@@ -13,13 +13,13 @@ public class Paragraph extends Element {
 			 System.out.println( "Paragraph: " + text );
 		}
 		
-		@Override
+		
 		 public void add(Element el) {}
 
-		 @Override
+		 
 		 public void remove(Element el) {}
 
-		 @Override
+		
 		 public Element get(int num) {
 		      return null;
 		 }
@@ -41,4 +41,11 @@ public class Paragraph extends Element {
 		       return text;
 		    }
 
+		 public void render() {
+		      System.out.println("Paragraph: " + this.text);
+		 }
+		 
+		  public void accept(Visitor visitor) {
+		      visitor.visit(this);
+		  }
 }

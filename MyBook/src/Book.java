@@ -2,7 +2,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book extends Section {
+public class Book extends Section implements Visitee {
 	private String title;
 	private List<Author> authors = new ArrayList<>();
 	private List<Chapter> chapters = new ArrayList<>();
@@ -44,5 +44,27 @@ public class Book extends Section {
 		return chapters.get(indexChapter);
 	}
 	
+
+	public void render() {
+        System.out.println("Book: " + this.title + "\n");
+
+        System.out.println("Authors:");
+        for (Author aut : authors) {
+            aut.print();
+        }
+
+        System.out.println();
+
+        for (Element element : elementList) {
+            element.print();
+        }
+    }
+
 	
+	public void accept(Visitor visitor) {
+	    visitor.visit(this);
+	    for (Element element : elementList) {
+	         element.accept(visitor);
+	    }
+	}
 }

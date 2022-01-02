@@ -26,7 +26,7 @@ public class PictureContent {
 
         jFrame.setLayout(new FlowLayout());
 
-        jFrame.setSize(500, 500);
+        jFrame.setSize(420, 690);
         JLabel jLabel = new JLabel();
 
         jLabel.setIcon(imageIcon);

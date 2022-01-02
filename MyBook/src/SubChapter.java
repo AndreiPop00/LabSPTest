@@ -1,7 +1,7 @@
 
 
 
-public class SubChapter extends Element {
+public class SubChapter extends Element implements Visitee {
 	private String name;
 	private Chapter chapter;
 	
@@ -24,5 +24,13 @@ public class SubChapter extends Element {
 	 public Element get(int nr) {
 	      return null;
 	 }
+	 
+	 public void accept(Visitor visitor) {
+	        visitor.visit(this);
+	    }
 
+	public void render() {
+		System.out.println("Subchapter: " + name);
+		
+	}
 }

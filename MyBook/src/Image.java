@@ -8,7 +8,7 @@ public class Image extends Element implements Picture {
 			this.imageName = name;
 
 			try {
-			TimeUnit.SECONDS.sleep(5);
+			TimeUnit.SECONDS.sleep(3);
 			} catch (InterruptedException e) {
 			e.printStackTrace();
 			}
@@ -18,11 +18,11 @@ public class Image extends Element implements Picture {
 			 System.out.println( "Image with name: " + imageName );
 		}
 	
-		 public void add(Element el) {}
+		 public void add(Element element) {}
 
-		 public void remove(Element el) {}
+		 public void remove(Element element) {}
 
-		 public Element get(int num) {
+		 public Element get(int nr) {
 		      return null;
 		 }
 		 
@@ -30,9 +30,23 @@ public class Image extends Element implements Picture {
 		      return this.imageName;
 		 }
 
-	     public PictureContent content() {
-	
-			return null;
-		 }
+		   public void render() {
+		        System.out.println("Image with name: " + this.imageName);
+		        content().renderImage();
+		    }
+		   
+		  
+		    public PictureContent content() {
+		        return new PictureContent(this.imageName);
+		    }
+
+		
+		    public void accept(Visitor visitor) {
+		        visitor.visit(this);
+		    }
+
+		    public String getImageName() {
+		        return imageName;
+		    }
 
 }
